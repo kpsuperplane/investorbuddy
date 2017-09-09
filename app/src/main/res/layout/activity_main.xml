@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hackthenorth.pennapps.investorbuddy.MainActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="list" />
+
+    <com.hackthenorth.pennapps.investorbuddy.DragGroup
+        android:id="@+id/dragGroup"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:outlineProvider="bounds"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/dragHeader"
+            android:clipToPadding="false"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:elevation="30dp">
+            <fragment
+                android:id="@+id/dragHeaderFragment"
+                android:name="com.hackthenorth.pennapps.investorbuddy.ItemFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:outlineProvider="bounds"
+                android:gravity="center" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="#FFF"
+            android:elevation="30dp"
+            android:id="@+id/dragBody"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:id="@+id/dragBodyContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FF00FF"
+                        android:gravity="center"
+                        android:tag="desc"
+                        android:text="Loreum Loreum"
+                        android:textColor="@android:color/white"
+                        android:textSize="35sp" />
+            </FrameLayout>
+        </FrameLayout>
+
+
+    </com.hackthenorth.pennapps.investorbuddy.DragGroup>
+</FrameLayout>
